@@ -1,17 +1,17 @@
-# Hugo Theme: Console 
+A customized verison for Hugo Theme [Console](ttps://github.com/panr/hugo-theme-terminal).
 
-![Console](https://github.com/mrmierzejewski/hugo-theme-console/blob/master/images/preview.png?raw=true)
-
-## Live demo
-
-https://mrmierzejewski.com
-
-### What's need
+### What's new
 
 1. Enable `tags` page by default
 2. Add support for `utteranc` comment system 
 3. Add word count feature for posts
 4. Disable Zoom in animation when navigating to new page
+
+## Live demo
+
+https://sayary.github.io/
+
+
 
 ## License
 
