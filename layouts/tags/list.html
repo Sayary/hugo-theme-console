@@ -1,0 +1,35 @@
+{{ define "main" }}
+<br>
+<h1>{{ .Page.Title }}</h1>
+<br/>
+{{ .Content }}
+
+
+<div class="posts-list">
+{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    {{ $.Scratch.Set $name $taxonomy.Count }}
+{{ end }}
+
+{{ range sort .Data.Pages "Date" "desc" }}
+    {{ if not .Params.private }}
+        <div class="post">
+            <p>
+                {{ if .PublishDate }}
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>    
+                {{ end }}
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}
+                    <!-- Add tags count -->
+                    {{ if $.Scratch.Get .Title }}
+                        ({{$.Scratch.Get .Title }})
+                    {{ end }}
+                </a></h1>
+                {{ .Summary }}
+
+
+            </p>
+        </div>
+    {{ end }}
+{{ end }}
+</div>
+
+{{ end }}
